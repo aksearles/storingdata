@@ -1,0 +1,14 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+sample_data = "28.8, 27.7, 27.8, 28.8, 27.8, 28.8, 28.6, 28.2, 28.0, 27.6, 28.0, 28.6, 27.8, 27.4, 27.8, 28.0, 28.0, 27.8, 28.2, 27.8, 27.8, 27.3, 28.6, 28.4, 28.6, 29.1, 29.7, 28.9, 29.0,"
+
+
+myArray = np.reshape(np.array([print(float(i)) for i in sample_data.split(", ")]), (8,8))
+max_val = np.max(myArray)
+min_val = np.min(myArray)
+
+
+plt.title(f"Max temp:{max_val} Min temp:{min_val}")
+plt.imshow(myArray, interpolation="bilinear" , cmap = "viridis")
+plt.show()
