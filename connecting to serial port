@@ -1,0 +1,19 @@
+import serial as ser
+#import time
+#import matplotlib.pyplot as plt
+#import numpy as np
+#from serial.serialutil import Timeout
+
+myCom = ser.Serial(port = "COM9", baudrate=9600, timeout=0.1)
+
+while True:
+    
+    x = input("what is your command?")
+    x = x +"\n"
+    myCom.write(str.encode(x))
+    response = myCom.readline().decode('utf-8')
+    print(response)
+#x = input("choose your command")
+#myCom.write(x.encode())
+#a = myCom.readline().decode('utf-8')
+#print(a)
